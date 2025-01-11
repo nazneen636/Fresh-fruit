@@ -32,9 +32,6 @@ const Login = ({ closePopUp }) => {
   };
 
   let manageSubmit = () => {
-    if (!name) {
-      setNameErr("Name field is required");
-    }
     if (!email) {
       setEmailErr("Email field is required");
     }
