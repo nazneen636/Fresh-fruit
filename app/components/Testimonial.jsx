@@ -20,10 +20,13 @@ const Testimonial = () => {
   };
   return (
     <div>
-      <Container className="my-[154px]">
+      <Container className="my-[0px] md:my-[154px]">
         <div className="flex items-center justify-center flex-col mb-4">
           <Title titleText="Testimonial" />
-          <Heading headingText="What Our Customers Say" />
+          <Heading
+            className="text-center"
+            headingText="What Our Customers Say"
+          />
           <Para
             className="text-center mt-1"
             paraText="Don't just take our word for it—here's what some of our customers have to say about their experience with Fresh Harvest:"
@@ -31,7 +34,7 @@ const Testimonial = () => {
         </div>
         <Slider {...settings}>
           <div className="">
-            <div className="flex gap-9 items-center">
+            <div className="flex md:flex-row flex-col gap-9 items-center">
               <div className="left">
                 <Image src={customer} alt="customer" />
               </div>

@@ -31,8 +31,8 @@ const blogItem = [
 
 const Blog = () => {
   return (
-    <div id="blog ">
-      <Container className="mt-10">
+    <div id="blog">
+      <Container className="mt-20 md:mt-10">
         <div className="flex items-center justify-center flex-col mb-4">
           <Title titleText="Our Blog" />
           <Heading headingText="Fresh Harvest Blog" />
@@ -41,10 +41,10 @@ const Blog = () => {
             paraText="Welcome to the Fresh Harvest Blog, your go-to resource for all things related to fresh produce, healthy eating, and culinary inspiration."
           />
         </div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6">
           {blogItem.map((item, index) => (
             <div key={index} className="w-[384px] h-[395px]">
-              <div className="mb-6">
+              <div className="mb-2 md:mb-6">
                 <Image src={item.image} />
               </div>
               <span className="">{item.date}</span>

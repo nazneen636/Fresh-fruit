@@ -13,7 +13,7 @@ import Btn from "../layers/Btn";
 
 const Footer = () => {
   return (
-    <div className="#F4F6F6 mt-[300px]">
+    <div className="bg-[#F4F6F6] pt-10 mt-10 md:mt-[300px]">
       <Container className="">
         <div className="top pb-8 flex md:flex-row flex-col justify-between border-b border-[#D9D9D9]">
           <div className="left mb-8">
@@ -23,7 +23,7 @@ const Footer = () => {
             <Btn className="mt-[113px] md:block hidden" />
           </div>
           <div className="right">
-            <div className="menu flex gap-2 md:gap-[140px]">
+            <div className="menu flex gap-5 md:gap-[140px] text-nowrap">
               <div className="menu1">
                 <h3 className="mb-1 font-semibold text-[10px] md:text-[18px] rubik text-darkBlue">
                   Quick links 1
@@ -107,8 +107,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <p className="normal flex gap-1 items-center">
-                      <IoLocationOutline className="text-green text-base" />
+                    <p className="normal flex gap-1 items-center text-wrap">
+                      <IoLocationOutline className="text-green text-base " />
                       Tanjung Sari Street, Pontianak, Indonesia
                     </p>
                   </li>
@@ -132,8 +132,26 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          <div className="payment md:hidden block">
+            <h3 className="mt-[30px] font-semibold text-darkBlue text-sm">
+              Accepted Payment Methods:
+            </h3>
+            <div className="flex gap-[10px] mt-3">
+              <Link href="/">
+                <Image src={visa} alt="visa" />
+              </Link>
+              <Link href="/">
+                <Image src={paypal} alt="visa" />
+              </Link>
+              <Link href="/">
+                <Image src={applePay} alt="visa" />
+              </Link>
+            </div>
+          </div>
+          <Btn className="md:hidden block mt-5" />
         </div>
-        <div className="bottom py-5 font-semibold text-darkBlue">
+
+        <div className="bottom text-[10px] md:text-xs py-5 font-semibold text-darkBlue">
           © Copyright 2024, All Rights Reserved by Banana Studio
         </div>
       </Container>

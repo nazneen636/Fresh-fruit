@@ -10,6 +10,7 @@ import { IoMdCart } from "react-icons/io";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
+import Login from "./Login";
 
 const menuItem = [
   {
@@ -26,11 +27,16 @@ const menuItem = [
   },
   {
     name: "Blog",
-    link: "/blog",
+    link: "#blog",
   },
 ];
 
 const Navbar = () => {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  const openPopUp = () => setIsPopUpOpen(true);
+  const closePopUp = () => setIsPopUpOpen(false);
+
   let items = useSelector((state) => state.counter.cart);
   console.log(items.length);
 
@@ -85,12 +91,17 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex flex-col md:hidden gap-4">
-            <Link
-              href="/"
+            <button
+              onClick={openPopUp}
               className="rubik font-semibold text-sm tracking-[-0.02em]  py-2  hover:text-customWhite px-6 rounded bg-white hover:bg-transparent border border-transparent hover:border-darkBlue text-fontColor duration-300 transition-all mt-4 w-28 text-center"
             >
               Sign in
-            </Link>
+            </button>
+            {isPopUpOpen && (
+              <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">
+                <Login closePopUp={closePopUp} />
+              </div>
+            )}
           </div>
         </div>
         {/* =================menu========== */}
@@ -112,12 +123,17 @@ const Navbar = () => {
               {items.length}
             </span>
           </Link>
-          <Link
-            href="/"
+          <button
+            onClick={openPopUp}
             className="rubik font-semibold text-sm tracking-[-0.02em] text-darkBlue py-3 px-6 rounded border border-darkBlue ml-1"
           >
             Sign in
-          </Link>
+          </button>
+          {isPopUpOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">
+              <Login closePopUp={closePopUp} />
+            </div>
+          )}
         </div>
         {/* =================btn========== */}
         <div className="md:hidden flex gap-5">

@@ -41,10 +41,10 @@ const Product = () => {
 
   return (
     <div>
-      <Container className="mt-[254px]">
+      <Container className="mt-[150px] md:mt-[254px]">
         <div className="flex items-center justify-center flex-col">
           <Title titleText="Our Products" />
-          <Heading headingText="Our Fresh Products" />
+          <Heading className="" headingText="Our Fresh Products" />
           <Para
             className="text-center mt-1"
             paraText="We pride ourselves on offering a wide variety of fresh and flavorful fruits, vegetables, and salad ingredients."
@@ -56,7 +56,7 @@ const Product = () => {
             {["All", "Fruits", "Vegetables", "Salad"].map((category) => (
               <li
                 key={category}
-                className={`text-[18px] py-2 px-3 rounded-lg border border-[#D9D9D9] ${
+                className={`text-sm md:text-[18px] py-2 px-3 rounded-lg border border-[#D9D9D9] ${
                   activeTab === category
                     ? "text-white bg-green"
                     : "text-[#A6A6A6]"
