@@ -4,10 +4,13 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import google from "../../public/google.png";
 import facebook from "../../public/facebook.png";
 import Image from "next/image";
+import Signup from "./Signup";
 
 const Login = ({ closePopUp }) => {
-  let [name, setName] = useState();
-  let [nameErr, setNameErr] = useState();
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  const openPopUp = () => setIsPopUpOpen(true);
+  const sclosePopUp = () => setIsPopUpOpen(false);
 
   let [email, setEmail] = useState();
   let [emailErr, setEmailErr] = useState();
@@ -15,12 +18,6 @@ const Login = ({ closePopUp }) => {
   let [password, setPassword] = useState();
   let [passwordErr, setPasswordErr] = useState();
   let [passwordEye, setPasswordEye] = useState(false);
-
-  let manageName = (element) => {
-    let nameCheck = element.target.value;
-    setName(nameCheck);
-    setNameErr("");
-  };
 
   let manageEmail = (element) => {
     let emailCheck = element.target.value;
@@ -67,22 +64,6 @@ const Login = ({ closePopUp }) => {
         ✕
       </button>
       <div className="form mt-0 md:mt-7 w-full flex items-center justify-center flex-col gap-4">
-        <div className="w-full flex flex-col gap-3 relative">
-          <label htmlFor="name" className="w-full text-[18px] text-darkBlue">
-            Full name
-          </label>
-          <input
-            onChange={manageName}
-            placeholder="Enter your name"
-            value={name}
-            className="border border-[#C5C5C5] outline-none bg-transparent rounded-lg py-2 md:py-3 px-4 w-full text-[18px] font-[400] placeholder:text-[#A6A6A6]"
-            type="text"
-            id="name"
-          />
-          <p className="text-sm text-red absolute left-0 top-[103%]">
-            {nameErr}
-          </p>
-        </div>
         <div className="w-full flex flex-col gap-3 relative">
           <label htmlFor="email" className="w-full text-[18px] text-darkBlue">
             Email Address
@@ -171,9 +152,14 @@ const Login = ({ closePopUp }) => {
         </div>
         <div className="font-semibold">
           Don’t have an account?{" "}
-          <Link href="/" className="text-orange">
+          <button onClick={openPopUp} className="text-orange">
             Sign up
-          </Link>
+          </button>
+          {isPopUpOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">
+              <Signup closePopUp={sclosePopUp} />
+            </div>
+          )}
         </div>
       </div>
     </div>

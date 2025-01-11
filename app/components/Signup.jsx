@@ -4,8 +4,12 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import google from "../../public/google.png";
 import facebook from "../../public/facebook.png";
 import Image from "next/image";
+import Login from "./Login";
 
 const Signup = ({ closePopUp }) => {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const openPopUp = () => setIsPopUpOpen(true);
+  const lclosePopUp = () => setIsPopUpOpen(false);
   let [name, setName] = useState();
   let [nameErr, setNameErr] = useState();
 
@@ -59,7 +63,7 @@ const Signup = ({ closePopUp }) => {
   };
   return (
     <div className="bg-white py-10 px-8 rounded shadow-lg relative">
-      <h2 className="text-[32px] font-semibold text-center">Login</h2>
+      <h2 className="text-[32px] font-semibold text-center">Sign Up</h2>
       <button
         onClick={closePopUp}
         className="absolute top-[5%] right-[4%] text-black font-bold text-lg"
@@ -171,7 +175,14 @@ const Signup = ({ closePopUp }) => {
         </div>
         <div className="font-semibold">
           Don’t have an account?{" "}
-          <button className="text-orange">Sign up</button>
+          <button onClick={openPopUp} className="text-orange">
+            Login
+          </button>
+          {isPopUpOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">
+              <Login closePopUp={lclosePopUp} />
+            </div>
+          )}
         </div>
       </div>
     </div>
