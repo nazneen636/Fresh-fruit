@@ -10,11 +10,11 @@ const ProductItem = ({
   onAddToCart,
 }) => {
   return (
-    <Link
-      href="/productdetails"
-      className="w-[161px] md:w-[282px] h-[230px] md:h-[360px] rounded-[20px] py-[10px] px-3 cursor-pointer flex items-center justify-center flex-col shadow-lg shadow-[#092b5e1b]"
-    >
-      <div className="productImg w-[149px] h-[120px] md:w-[258px] md:h-[208px] bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
+    <div className="w-[161px] md:w-[282px] h-[230px] md:h-[360px] rounded-[20px] py-[10px] px-3 cursor-pointer flex items-center justify-center flex-col shadow-lg shadow-[#092b5e1b]">
+      <Link
+        href="/productdetails"
+        className="productImg w-[149px] h-[120px] md:w-[258px] md:h-[208px] bg-[#F4F6F6] rounded-2xl flex items-center justify-center"
+      >
         <Image
           src={productImg}
           width={258}
@@ -22,7 +22,7 @@ const ProductItem = ({
           className="object-contain w-[80%] h-[80%]  md:w-auto md:h-auto"
           alt="product"
         />
-      </div>
+      </Link>
       <h3 className="md:mt-3 md:mb-2 text-[18px] font-[600] text-darkBlue ">
         {productTitle}
       </h3>
@@ -33,7 +33,7 @@ const ProductItem = ({
       >
         Add to cart
       </button>
-    </Link>
+    </div>
   );
 };
 

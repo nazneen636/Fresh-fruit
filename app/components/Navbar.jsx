@@ -141,10 +141,13 @@ const Navbar = () => {
             <Link href="/" className="flex gap-2 items-center">
               <FaHeart className="text-white text-base" />
             </Link>
-            <Link href="/" className="flex gap-2 items-center relative mr-2">
+            <Link
+              href="/productdetails"
+              className="flex gap-2 items-center relative mr-2"
+            >
               <IoMdCart className="text-white text-xl" />
               <span className="absolute left-2 top-[-6px] w-4 h-4 text-[10px] bg-red border border-[#EDEDED] rounded-full flex items-center justify-center text-customWhite">
-                3
+                {items.length}
               </span>
             </Link>
           </div>
