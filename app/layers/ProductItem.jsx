@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import img from "../../public/coconut.png";
+import Link from "next/link";
 
 const ProductItem = ({
   productTitle,
@@ -9,7 +10,10 @@ const ProductItem = ({
   onAddToCart,
 }) => {
   return (
-    <div className="w-[161px] md:w-[282px] h-[230px] md:h-[360px] rounded-[20px] py-[10px] px-3 cursor-pointer flex items-center justify-center flex-col shadow-lg shadow-[#092b5e1b]">
+    <Link
+      href="/productdetails"
+      className="w-[161px] md:w-[282px] h-[230px] md:h-[360px] rounded-[20px] py-[10px] px-3 cursor-pointer flex items-center justify-center flex-col shadow-lg shadow-[#092b5e1b]"
+    >
       <div className="productImg w-[149px] h-[120px] md:w-[258px] md:h-[208px] bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
         <Image
           src={productImg}
@@ -29,7 +33,7 @@ const ProductItem = ({
       >
         Add to cart
       </button>
-    </div>
+    </Link>
   );
 };
 
