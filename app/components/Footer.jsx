@@ -151,7 +151,7 @@ const Footer = () => {
           <Btn className="md:hidden block mt-5" />
         </div>
 
-        <div className="bottom text-[10px] md:text-xs py-5 font-semibold text-darkBlue">
+        <div className="bottom text-[10px]  md:text-xs py-5 font-semibold text-darkBlue">
           © Copyright 2024, All Rights Reserved by Banana Studio
         </div>
       </Container>

@@ -155,7 +155,7 @@ const Signup = ({ closePopUp }) => {
           Login
         </button>
         <div className="">
-          <h2 className="text-[18px] text-darkBlue font-bold">
+          <h2 className="text-[18px] text-darkBlue font-bold relative after:absolute after:left-[-138px] after:top-1/2 after:w-[8rem] after:h-[1px] after:bg-gray-400 before:absolute before:right-[-138px] before:top-1/2 before:w-[8rem] before:h-[1px] before:bg-gray-400">
             Or Sign in with
           </h2>
         </div>
@@ -174,9 +174,9 @@ const Signup = ({ closePopUp }) => {
           </div>
         </div>
         <div className="font-semibold">
-          Don’t have an account?{" "}
+          Already have an account?{" "}
           <button onClick={openPopUp} className="text-orange">
-            Login
+            Log In
           </button>
           {isPopUpOpen && (
             <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">

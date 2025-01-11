@@ -28,6 +28,12 @@ body {
 .slick-active button {
   @apply text-[0px]  before:bg-green before:text-green before:w-4 before:h-4 before:rounded-full;
 }
-.slick-dots li {
-  @apply text-transparent;
+.slick-dots li.slick-active button:before {
+  @apply !text-green;
+}
+.slick-dots li button:before {
+  @apply !text-green;
+}
+.slick-dots li button {
+  @apply text-[0px]  before:bg-green before:text-green before:w-4 before:h-4 before:rounded-full;
 }

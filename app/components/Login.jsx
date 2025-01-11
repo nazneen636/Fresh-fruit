@@ -52,7 +52,7 @@ const Login = ({ closePopUp }) => {
     }
   };
   return (
-    <div className="bg-white py-10 px-8 rounded shadow-lg relative">
+    <div className="w-[320px] md:w-auto bg-white py-10 px-4 md:px-8 rounded shadow-lg relative">
       <h2 className="text-[32px] font-semibold text-center">Login</h2>
       <button
         onClick={closePopUp}
@@ -77,7 +77,7 @@ const Login = ({ closePopUp }) => {
             {emailErr}
           </p>
         </div>
-        <div className="w-full flex flex-col gap-3 relative">
+        <div className="w-full flex flex-col gap-3 relative mt-2">
           <label
             htmlFor="password"
             className="w-full text-[18px] text-darkBlue"
@@ -112,7 +112,7 @@ const Login = ({ closePopUp }) => {
             }`}
           />
         </div>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full mt-2">
           <div className="flex gap-2">
             <input type="checkbox" name="remember" id="remember" />
             <label className="text-darkBlue text-base" htmlFor="remember">
@@ -123,24 +123,24 @@ const Login = ({ closePopUp }) => {
         </div>
         <button
           onClick={manageSubmit}
-          className="bg-orange md:w-[414px] py-4 rounded-lg text-white font-bold text-xl"
+          className="bg-orange md:w-[414px] w-auto py-2 md:py-4 rounded-lg text-white font-bold text-xl px-16 md:px-0"
           type="submit"
         >
           Login
         </button>
         <div className="">
-          <h2 className="text-[18px] text-darkBlue font-bold">
+          <h2 className="text-[18px] text-darkBlue font-bold relative after:absolute after:left-[-138px] after:top-1/2 md:after:w-[8rem] after:h-[1px] after:bg-gray-400 before:absolute before:right-[-138px] before:top-1/2 md:before:w-[8rem] before:h-[1px] before:bg-gray-400">
             Or Sign in with
           </h2>
         </div>
         <div className="btnDiv flex gap-4">
-          <div className="btn w-[199px] py-2 border-[#D9D9D9] border rounded-lg flex items-center justify-center">
+          <div className="btn md:w-[199px] w-[130px] py-2 border-[#D9D9D9] border rounded-lg flex items-center justify-center">
             <Link href="/" className="flex gap-2">
               <Image src={google} alt="google" />
               <span>Google</span>
             </Link>
           </div>
-          <div className="btn w-[199px] py-2 border-[#D9D9D9] border rounded-lg flex items-center justify-center">
+          <div className="btn md:w-[199px] w-[130px] py-2 border-[#D9D9D9] border rounded-lg flex items-center justify-center">
             <Link href="/" className="flex gap-2">
               <Image src={facebook} alt="google" />
               <span>Facebook</span>
