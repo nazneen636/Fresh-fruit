@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Mushroom",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/mashroom.png",
+    "salad": true
+  },
+  {
+    "id": 2,
+    "name": "Mustard",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/mustard.png",
+    "salad": true
+  },
+  {
+    "id": 3,
+    "name": "Pomegranate",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/Pomegranate.png",
+    "fruit": true
+  },
+  {
+    "id": 4,
+    "name": "Kiwi",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/kiwi.png",
+    "fruit": true
+  },
+  {
+    "id": 5,
+    "name": "Orange",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/orange.png",
+    "fruit": true
+  },
+  {
+    "id": 6,
+    "name": "Coconut",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/coconut.png",
+    "fruit": true
+  },
+  {
+    "id": 7,
+    "name": "Guava",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/guava.png",
+    "fruit": true
+  },
+  {
+    "id": 8,
+    "name": "Eggplant",
+    "price": 2.2,
+    "unit": "kg",
+    "image": "/eggplant.png",
+    "vegetable": true
+  }
+]

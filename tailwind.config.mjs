@@ -8,8 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        fontColor: "#4A4A52",
+        darkBlue: "#212337",
+        green: "#749B3F",
+        red: "#EE4536",
+        orange: "#FF6A1A",
+        customWhite: "#FFEFEB",
+      },
+      fontFamily: {
+        questrial: ["Questrial", "serif"],
+        rubik: ["Rubik", "serif"],
+      },
+      backgroundImage: {
+        "custom-bg": "url('../public/countdown.png')", // Add custom background image
       },
     },
   },
