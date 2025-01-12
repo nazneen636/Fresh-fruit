@@ -36,7 +36,3 @@ body {
 .slick-dots li button {
   @apply text-[0px]  before:bg-green before:text-green before:w-4 before:h-4 before:rounded-full;
 }
-
-.active {
-  @apply relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full after:w-[14px] after:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all;
-}
