@@ -13,10 +13,22 @@ import { useSelector } from "react-redux";
 import Login from "./Login";
 
 const menuItem = [
-  { id: 1, name: "Home", link: "/" },
-  { id: 2, name: "Shop", link: "#shop" },
-  { id: 3, name: "About us", link: "#about" },
-  { id: 4, name: "Blog", link: "#blog" },
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Shop",
+    link: "#shop",
+  },
+  {
+    name: "About us",
+    link: "#about",
+  },
+  {
+    name: "Blog",
+    link: "#blog",
+  },
 ];
 
 const Navbar = () => {
@@ -47,7 +59,7 @@ const Navbar = () => {
 
   return (
     <div className="md:sticky z-[1000] left-0 top-0 w-full md:bg-white">
-      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2 pt-2 md:pt-0">
+      <Container className="relative z-50 flex items-center justify-between py-[30px] md:px-0 px-2">
         {/* =================logo========== */}
         <div className="logo">
           <Link href="/">
@@ -63,14 +75,14 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex md:flex-row flex-col md:items-center gap-5 md:gap-16">
-            {menuItem.map((item) => (
-              <li key={item.id}>
+            {menuItem.map((item, index) => (
+              <li key={index}>
                 <Link
                   href={item.link}
-                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full md:hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all ${
+                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all ${
                     pathname === item.link
-                      ? "text-darkBlue after:w-[14px] after:left-1/2 after:top-[120%] after:-translate-x-1/2"
-                      : ""
+                      ? "text-darkBlue md:after:w-[14px]"
+                      : "text-customWhite  md:after:w-0"
                   }`}
                 >
                   {item.name}
