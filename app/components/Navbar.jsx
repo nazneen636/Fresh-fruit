@@ -51,7 +51,7 @@ const Navbar = () => {
       <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2 pt-6 md:pt-0">
         {/* =================logo========== */}
         <div className="logo">
-          <Link href="/">
+          <Link to="/">
             <Image src={logo} alt="logo" />
           </Link>
         </div>
@@ -99,13 +99,13 @@ const Navbar = () => {
 
         {/* =================btn========== */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/" className="flex gap-2 items-center">
+          <Link to="/" className="flex gap-2 items-center">
             <FaHeart className="text-green text-base" />
             <span className="font-questrial text-sm tracking-[-0.02em] leading-6 text-darkBlue">
               Favorites
             </span>
           </Link>
-          <Link href="/" className="flex gap-2 items-center relative">
+          <Link to="/" className="flex gap-2 items-center relative">
             <IoMdCart className="text-green text-xl" />
             <span className="font-questrial text-sm tracking-[-0.02em] leading-6 text-darkBlue">
               Cart
@@ -129,7 +129,7 @@ const Navbar = () => {
         {/* =================btn========== */}
         <div className="md:hidden flex gap-5">
           <div className="flex gap-2">
-            <Link href="/" className="flex gap-2 items-center">
+            <Link to="/" className="flex gap-2 items-center">
               <FaHeart className="text-white text-base" />
             </Link>
             <Link

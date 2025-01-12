@@ -7,7 +7,7 @@ import blog2 from "../../public/blog2.png";
 import blog3 from "../../public/blog3.png";
 import Image from "next/image";
 import Container from "../layers/Container";
-import Link from "next/link";
+// import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 const blogItem = [
   {
