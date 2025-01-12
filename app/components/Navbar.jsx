@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Container from "../layers/Container";
 import logo from "../../public/Logo.png";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHeart } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
@@ -11,24 +11,13 @@ import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import Login from "./Login";
+import { Link } from "react-scroll";
 
 const menuItem = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "Shop",
-    link: "/shop",
-  },
-  {
-    name: "About us",
-    link: "#about",
-  },
-  {
-    name: "Blog",
-    link: "#blog",
-  },
+  { id: 1, name: "Home", link: "#" },
+  { id: 2, name: "Shop", link: "#shop" },
+  { id: 3, name: "About us", link: "#about" },
+  { id: 4, name: "Blog", link: "#blog" },
 ];
 
 const Navbar = () => {
@@ -59,7 +48,7 @@ const Navbar = () => {
 
   return (
     <div className="md:sticky z-[1000] left-0 top-0 w-full md:bg-white">
-      <Container className="relative z-50 flex items-center justify-between py-[30px] md:px-0 px-2">
+      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2">
         {/* =================logo========== */}
         <div className="logo">
           <Link href="/">
@@ -79,11 +68,13 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={item.link}
-                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all ${
-                    pathname === item.link
-                      ? "text-darkBlue md:after:w-[14px]"
-                      : "text-customWhite  md:after:w-0"
-                  }`}
+                  smooth={true}
+                  duration={1800}
+                  spy={true}
+                  offset={-80}
+                  activeClass="active"
+                  to={item.link}
+                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full md:hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all`}
                 >
                   {item.name}
                 </Link>

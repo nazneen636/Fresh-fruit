@@ -40,8 +40,8 @@ const Product = () => {
   };
 
   return (
-    <div>
-      <Container className="mt-[150px] md:mt-[254px]">
+    <div id="#shop">
+      <Container className="pt-[150px] md:pt-[254px]">
         <div className="flex items-center justify-center flex-col">
           <Title titleText="Our Products" />
           <Heading className="" headingText="Our Fresh Products" />
