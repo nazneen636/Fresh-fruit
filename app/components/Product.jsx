@@ -40,7 +40,7 @@ const Product = () => {
   };
 
   return (
-    <div id="#shop">
+    <div id="shop">
       <Container className="pt-[150px] md:pt-[254px]">
         <div className="flex items-center justify-center flex-col">
           <Title titleText="Our Products" />

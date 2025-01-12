@@ -9,7 +9,7 @@ import ComBtn from "../layers/ComBtn";
 
 const About = () => {
   return (
-    <div id="#about" className="pt-[100px] md:pt-[290px]">
+    <div id="about" className="pt-[100px] md:pt-[290px]">
       <Container className="flex md:flex-row flex-col gap-16">
         <div className="">
           <Image src={img} alt="about" />

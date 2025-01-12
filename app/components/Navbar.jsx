@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Container from "../layers/Container";
 import logo from "../../public/Logo.png";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHeart } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
@@ -11,10 +11,9 @@ import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import Login from "./Login";
-import { Link } from "react-scroll";
 
 const menuItem = [
-  { id: 1, name: "Home", link: "#" },
+  { id: 1, name: "Home", link: "/" },
   { id: 2, name: "Shop", link: "#shop" },
   { id: 3, name: "About us", link: "#about" },
   { id: 4, name: "Blog", link: "#blog" },
@@ -48,10 +47,10 @@ const Navbar = () => {
 
   return (
     <div className="md:sticky z-[1000] left-0 top-0 w-full md:bg-white">
-      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2 pt-6 md:pt-0">
+      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2 pt-2 md:pt-0">
         {/* =================logo========== */}
         <div className="logo">
-          <Link to="/">
+          <Link href="/">
             <Image src={logo} alt="logo" />
           </Link>
         </div>
@@ -64,17 +63,15 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex md:flex-row flex-col md:items-center gap-5 md:gap-16">
-            {menuItem.map((item, index) => (
-              <li key={index}>
+            {menuItem.map((item) => (
+              <li key={item.id}>
                 <Link
                   href={item.link}
-                  smooth={true}
-                  duration={1800}
-                  spy={true}
-                  offset={-80}
-                  activeClass="active"
-                  to={item.link}
-                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full md:hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all`}
+                  className={`font-questrial text-customWhite md:text-fontColor text-sm tracking-[-0.02em] relative after:absolute after:h-[3px]  after:bg-green after:left-1/2 after:top-[120%] after:-translate-x-1/2 after:rounded-full md:hover:after:w-[14px] hover:text-darkBlue md:hover:text-fontColor after:duration-300 after:transition-all duration-300 transition-all ${
+                    pathname === item.link
+                      ? "text-darkBlue after:w-[14px] after:left-1/2 after:top-[120%] after:-translate-x-1/2"
+                      : ""
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -99,13 +96,13 @@ const Navbar = () => {
 
         {/* =================btn========== */}
         <div className="hidden md:flex items-center gap-4">
-          <Link to="/" className="flex gap-2 items-center">
+          <Link href="/" className="flex gap-2 items-center">
             <FaHeart className="text-green text-base" />
             <span className="font-questrial text-sm tracking-[-0.02em] leading-6 text-darkBlue">
               Favorites
             </span>
           </Link>
-          <Link to="/" className="flex gap-2 items-center relative">
+          <Link href="/" className="flex gap-2 items-center relative">
             <IoMdCart className="text-green text-xl" />
             <span className="font-questrial text-sm tracking-[-0.02em] leading-6 text-darkBlue">
               Cart
@@ -129,7 +126,7 @@ const Navbar = () => {
         {/* =================btn========== */}
         <div className="md:hidden flex gap-5">
           <div className="flex gap-2">
-            <Link to="/" className="flex gap-2 items-center">
+            <Link href="/" className="flex gap-2 items-center">
               <FaHeart className="text-white text-base" />
             </Link>
             <Link
