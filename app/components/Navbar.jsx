@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <div className="md:sticky z-[1000] left-0 top-0 w-full md:bg-white">
-      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2">
+      <Container className="relative z-50 flex items-center justify-between h-[80px] md:px-0 px-2 pt-6 md:pt-0">
         {/* =================logo========== */}
         <div className="logo">
           <Link href="/">
